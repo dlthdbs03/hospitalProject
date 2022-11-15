@@ -14,14 +14,36 @@ public class Main {
 			hospitalMain = new Main();
 		return hospitalMain;
 	}
-	Scanner scan = new Scanner(System.in); 
+	Scanner scan = new Scanner(System.in);
 	static Manager doctorMgr = new Manager();
 	static Manager patientMgr = new Manager();
+	static Manager receptionMgr = new Manager();
 	public void run()
 	{
-		
+		doctorMgr.readAll("doctor.txt",new Factory(){
+			public Manageable create(){
+				return new Doctor();
+			}
+		});
+		System.out.println("\n================= 전체 의사 리스트 =================");
+		doctorMgr.printAll();
+		patientMgr.readAll("patient.txt",new Factory(){
+			public Manageable create(){
+				return new Patient();
+			}
+		});
+
+		receptionMgr.readAll("reception.txt",new Factory(){
+			public Manageable create(){
+				return new Reception();
+			}
+		});
+		System.out.println("\n================= 전체 환자 리스트 =================");
+		patientMgr.printAll();
+		System.out.println("\n=============== 전체 접수 리스트 =================");
+		receptionMgr.printAll();
 	}
-	
+
 	public static void main(String args[]) {
 		Main m = new Main();
 		m.run();
