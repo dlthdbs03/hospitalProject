@@ -60,7 +60,7 @@ public class Patient implements Manageable, UIData {
 	@Override
 	public String[] getUITexts() {
 		// TODO Auto-generated method stub
-		String[] texts = new String[6];
+		String[] texts = new String[7];
 		texts[0] = name;
 		texts[1] = gender;
 		texts[2] = birth;
