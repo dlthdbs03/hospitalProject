@@ -6,19 +6,19 @@ import facade.DataEngineInterface;
 import mgr.Manageable;
 import mgr.Manager;
 
-public class patientMgr extends Manager implements DataEngineInterface {
-	private static patientMgr mgr = null;
+public class PatientMgr extends Manager implements DataEngineInterface {
+	private static PatientMgr mgr = null;
 
-	private patientMgr() {
+	private PatientMgr() {
 	}
 
-	public static patientMgr getInstance() {
+	public static PatientMgr getInstance() {
 		return mgr;
 	}
 
-	private String[] headers = { "ÀÌ¸§", "¼ºº°", "»ı³â¿ùÀÏ", "ÁÖ¹Î¹øÈ£", "°³¿ù", "ÀüÈ­¹øÈ£", "ÁÖ¼Ò" };
+	private String[] headers = { "ì´ë¦„", "ì„±ë³„", "ìƒë…„ì›”ì¼", "ì£¼ë¯¼ë²ˆí˜¸", "ê°œì›”", "ì „í™”ë²ˆí˜¸", "ì£¼ì†Œ" };
 
-//	ÀÌ¸§, ¼ºº°, »ı³â¿ùÀÏ, ÁÖ¹Î¹øÈ£ µŞÀÚ¸®, ³ªÀÌ(°³¿ù¼ö) , ÀüÈ­¹øÈ£, ÁÖ¼Ò
+//	ì´ë¦„, ì„±ë³„, ìƒë…„ì›”ì¼, ì£¼ë¯¼ë²ˆí˜¸ ë’·ìë¦¬, ë‚˜ì´(ê°œì›”ìˆ˜) , ì „í™”ë²ˆí˜¸, ì£¼ì†Œ
 	@Override
 	public int getColumnCount() {
 		// TODO Auto-generated method stub
@@ -40,7 +40,7 @@ public class patientMgr extends Manager implements DataEngineInterface {
 	@Override
 	public List<Manageable> search(String kwd) {
 		// TODO Auto-generated method stub
-		return Main.patientMgr.findAll(kwd);
+		return Main.PatientMgr.findAll(kwd);
 	}
 
 	@Override
